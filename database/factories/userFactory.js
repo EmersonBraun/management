@@ -1,8 +1,11 @@
-const Factory = use('Factory')
+'use strict'
+const UserFactory = use('Factory')
 
-Factory.blueprint('App/Models/User', (faker) => {
+UserFactory.blueprint('App/Models/User', (faker) => {
   return {
     username: faker.username(),
-    password: faker.password()
+    password: await Hash.make('secret')
   }
 })
+
+export default UserFactory

@@ -7,6 +7,23 @@ const Model = use('Model')
 const Hash = use('Hash')
 
 class User extends Model {
+
+  static get primaryKey () {
+    return 'id'
+  }
+
+  static get hidden () {
+    return ['password']
+  }
+
+  static get createTimestamp () {
+    return 'created_at'
+  }
+
+  static get updateTimestamp () {
+    return 'updated_at'
+  }
+
   static boot () {
     super.boot()
 
@@ -36,4 +53,4 @@ class User extends Model {
   }
 }
 
-module.exports = User
+export default User

@@ -13,4 +13,4 @@ class NoTimestamp {
   }
 }
 
-module.exports = NoTimestamp
+export default NoTimestamp
